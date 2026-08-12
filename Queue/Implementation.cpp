@@ -1,14 +1,13 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 class Queue
 {
-private:
+    private:
     int *arr;
     int front;
     int rear;
     int size;
-public:
-    // Constructor
+    public:
     Queue(int s)
     {
         size = s;
@@ -16,17 +15,14 @@ public:
         front = -1;
         rear = -1;
     }
-    // Check Empty
     bool isEmpty()
     {
         return front == -1;
     }
-    // Check Full
     bool isFull()
     {
         return rear == size - 1;
     }
-    // Enqueue
     void enqueue(int value)
     {
         if (isFull())
@@ -40,7 +36,6 @@ public:
         rear++;
         arr[rear] = value;
     }
-    // Dequeue
     int dequeue()
     {
         if (isEmpty())
@@ -60,7 +55,6 @@ public:
         }
         return value;
     }
-    // Peek
     int peek()
     {
         if (isEmpty())
@@ -70,7 +64,6 @@ public:
         }
         return arr[front];
     }
-    // Display
     void display()
     {
         if (isEmpty())
@@ -84,7 +77,6 @@ public:
         }
         cout << endl;
     }
-    // Destructor
     ~Queue()
     {
         delete[] arr;
@@ -92,7 +84,7 @@ public:
 };
 int main()
 {
-    Queue q(5); // Queue size = 5
+    Queue q(5);
     q.enqueue(10);
     q.enqueue(20);
     q.enqueue(30);
